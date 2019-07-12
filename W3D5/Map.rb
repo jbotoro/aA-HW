@@ -22,11 +22,13 @@ class Map
     end
 
     def delete(key)
-
+        @i.each do |pairs|
+            @i -= pairs if pairs[0] == key
+        end
     end
 
     def show
-
+        self
     end
 
 end
