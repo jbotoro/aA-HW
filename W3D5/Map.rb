@@ -4,14 +4,18 @@ class Map
     end
 
     def set(key,value)
-       if @i.include?(key)
-            @i.each do |pair|
-                if pair[0] == key
-                    pair[1] = value
-                end
+        unique = 0
+        @i.each do |pairs|
+            if pairs[0].include?(key)
+                pairs[1] = value
+                unique += 1
             end
-        else
+        end
+
+        if unique == 0
             @i << [key,value]
+        else
+            self
         end
     end
 
@@ -22,13 +26,23 @@ class Map
     end
 
     def delete(key)
-        @i.each do |pairs|
-            @i -= pairs if pairs[0] == key
+        @i.each_with_index do |pairs,idx|
+            if pairs[0] == key
+                @i.delete_at(idx)
+            end
         end
     end
 
     def show
         self
     end
-
 end
+
+test = Map.new
+
+p test.set("Jordan", 2)
+p test.set("Jordan", 5)
+p test.set("hello", "world")
+p test.get("Jordan")
+p test.delete("Jordan")
+p test.show
