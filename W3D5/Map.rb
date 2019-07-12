@@ -16,7 +16,9 @@ class Map
     end
 
     def get(key)
-
+        @i.each do |pairs|
+            return pairs if pairs[0] == key
+        end
     end
 
     def delete(key)
