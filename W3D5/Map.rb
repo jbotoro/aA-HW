@@ -38,11 +38,3 @@ class Map
     end
 end
 
-test = Map.new
-
-p test.set("Jordan", 2)
-p test.set("Jordan", 5)
-p test.set("hello", "world")
-p test.get("Jordan")
-p test.delete("Jordan")
-p test.show
