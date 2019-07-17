@@ -19,6 +19,8 @@ class Board
   end
 
   def valid_move?(start_pos)
+    raise " Invalid starting cup " unless cups.include?(start_pos)
+    raise " Starting cup is empty" if cups[start_pos].first.empty?
     
   end
 
