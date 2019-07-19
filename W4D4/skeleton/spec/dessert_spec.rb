@@ -49,7 +49,8 @@ describe Dessert do
   end
 
   describe "#eat" do
-    it "subtracts an amount from the quantity"
+    it "subtracts an amount from the quantity" do
+      brownie.eat()
 
     it "raises an error if the amount is greater than the quantity"
   end
